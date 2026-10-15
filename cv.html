@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Olabisi Samuel | Curriculum Vitae - Software Engineer</title>
+    <meta
+      name="description"
+      content="Curriculum Vitae for Olabisi Samuel - Software Engineer specializing in backend systems, fintech APIs, and full-stack development."
+    />
+    <link href="assets/img/my logo.jpg" rel="icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              surface: "#12131a",
+              "surface-container": "#1e1f26",
+              "surface-container-high": "#282a31",
+              "surface-container-low": "#1a1b22",
+              primary: "#afc6ff",
+              "primary-container": "#528dff",
+              "on-surface": "#e2e1eb",
+              "on-surface-variant": "#c2c6d6",
+              "on-primary": "#002d6c",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+        body {
+          background: #ffffff !important;
+          color: #111827 !important;
+          padding: 0 !important;
+        }
+        .cv-sheet {
+          box-shadow: none !important;
+          border: none !important;
+          padding: 0 !important;
+          max-width: 100% !important;
+          background: #ffffff !important;
+          color: #111827 !important;
+        }
+        .print-text-dark {
+          color: #111827 !important;
+        }
+        .print-text-muted {
+          color: #475569 !important;
+        }
+        .print-border-primary {
+          border-color: #2563eb !important;
+        }
+        .print-primary-text {
+          color: #2563eb !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface font-sans min-h-screen selection:bg-primary selection:text-on-primary">
+    <!-- Top Action Bar (no-print) -->
+    <header class="no-print sticky top-0 z-50 backdrop-blur-xl bg-surface/90 border-b border-white/10 px-4 sm:px-8 py-3.5">
+      <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+        <a
+          href="index.html"
+          class="flex items-center gap-2 text-sm font-semibold text-on-surface hover:text-primary transition-colors"
+        >
+          <span class="material-symbols-outlined text-base">arrow_back</span>
+          <span>Back to Portfolio</span>
+        </a>
+
+        <div class="flex items-center flex-wrap gap-2.5">
+          <!-- View Toggle Button -->
+          <button
+            id="toggleViewBtn"
+            class="px-3.5 py-1.5 rounded-full text-xs font-medium border border-white/15 hover:border-primary/50 text-on-surface-variant hover:text-primary transition-all flex items-center gap-1.5"
+            title="Switch between Paper View & Embedded PDF Viewer"
+          >
+            <span class="material-symbols-outlined text-sm">picture_as_pdf</span>
+            <span id="toggleViewText">View PDF Version</span>
+          </button>
+
+          <!-- Print Button -->
+          <button
+            onclick="window.print()"
+            class="px-3.5 py-1.5 rounded-full text-xs font-medium border border-white/15 hover:border-primary/50 text-on-surface hover:text-primary transition-all flex items-center gap-1.5"
+          >
+            <span class="material-symbols-outlined text-sm">print</span>
+            <span>Print</span>
+          </button>
+
+          <!-- Download DOCX (From root dir) -->
+          <a
+            href="Olabisi_Samuel_Software_Engineer_CV (1).docx"
+            download="Olabisi_Samuel_Software_Engineer_CV.docx"
+            class="px-3.5 py-1.5 rounded-full text-xs font-semibold border border-primary/40 bg-primary/10 hover:bg-primary/20 text-primary transition-all flex items-center gap-1.5"
+            title="Download Word Document (From root dir)"
+          >
+            <span class="material-symbols-outlined text-sm">description</span>
+            <span>Word (.docx)</span>
+          </a>
+
+          <!-- Download PDF -->
+          <a
+            href="Olabisi_Samuel_Software_Engineer_CV.pdf"
+            download="Olabisi_Samuel_Software_Engineer_CV.pdf"
+            class="px-4 py-1.5 rounded-full text-xs font-bold bg-primary text-on-primary hover:opacity-90 active:scale-95 transition-all shadow-[0_0_12px_rgba(79,140,255,0.35)] flex items-center gap-1.5"
+          >
+            <span class="material-symbols-outlined text-sm">download</span>
+            <span>Download PDF</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <!-- Embedded PDF Frame (initially hidden, can be toggled) -->
+      <div id="pdfViewerContainer" class="hidden mb-8 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-surface-container">
+        <div class="px-5 py-3 border-b border-white/10 flex items-center justify-between bg-surface-container-high">
+          <div class="flex items-center gap-2 text-xs font-mono text-primary">
+            <span class="material-symbols-outlined text-sm">picture_as_pdf</span>
+            <span>Olabisi_Samuel_Software_Engineer_CV.pdf</span>
+          </div>
+          <a
+            href="Olabisi_Samuel_Software_Engineer_CV.pdf"
+            target="_blank"
+            class="text-xs text-on-surface-variant hover:text-primary flex items-center gap-1"
+          >
+            <span>Open in full tab</span>
+            <span class="material-symbols-outlined text-xs">open_in_new</span>
+          </a>
+        </div>
+        <iframe
+          src="Olabisi_Samuel_Software_Engineer_CV.pdf"
+          class="w-full h-[850px] border-0"
+          title="Olabisi Samuel CV PDF"
+        ></iframe>
+      </div>
+
+      <!-- CV Paper Sheet -->
+      <article
+        id="cvPaperSheet"
+        class="cv-sheet bg-white text-gray-900 rounded-2xl p-6 sm:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/20 transition-all"
+      >
+        <!-- Header -->
+        <header class="text-center pb-4 mb-5 border-b-2 border-blue-600 print-border-primary">
+          <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-950 uppercase mb-1">
+            OLABISI SAMUEL
+          </h1>
+          <p class="text-xs sm:text-sm font-bold tracking-wider text-blue-600 uppercase mb-2">
+            SOFTWARE ENGINEER &nbsp;|&nbsp; BACKEND SYSTEMS &amp; FINTECH
+          </p>
+          <div class="text-xs text-gray-600 flex flex-wrap items-center justify-center gap-2 mb-2">
+            <span>United Kingdom</span>
+            <span class="text-gray-400">|</span>
+            <a href="tel:+447848166849" class="hover:text-blue-600 text-gray-700 font-medium">+447848166849</a>
+            <span class="text-gray-400">|</span>
+            <a href="mailto:samsamlux2016@gmail.com" class="hover:text-blue-600 text-gray-700 font-medium">samsamlux2016@gmail.com</a>
+          </div>
+          <div class="text-xs font-semibold text-blue-600 flex items-center justify-center gap-3">
+            <a href="https://www.linkedin.com/in/olanipekun-olabisi-6bbb54413/" target="_blank" rel="noopener noreferrer" class="hover:underline">LinkedIn</a>
+            <span class="text-gray-300">|</span>
+            <a href="https://github.com/SamSamlux" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+            <span class="text-gray-300">|</span>
+            <a href="https://uthmancoder-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer" class="hover:underline">Portfolio</a>
+          </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="mb-5">
+          <h2 class="text-xs font-extrabold uppercase tracking-wider text-gray-950 border-b border-gray-200 pb-1 mb-2">
+            PROFESSIONAL SUMMARY
+          </h2>
+          <p class="text-xs sm:text-[13px] leading-relaxed text-gray-700 font-medium">
+            Software engineer working across fintech applications, backend APIs, third-party integrations and frontend development. Since 2024, contributing to FlurryPay’s financial-product workflows, production troubleshooting and application delivery. Also building Univa and UnivaPay, combining hands-on product development with experience supporting live systems and real users.
+          </p>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="mb-5">
+          <h2 class="text-xs font-extrabold uppercase tracking-wider text-gray-950 border-b border-gray-200 pb-1 mb-2">
+            TECHNICAL SKILLS
+          </h2>
+          <ul class="text-xs sm:text-[13px] space-y-1.5 text-gray-700">
+            <li>
+              <strong class="text-gray-950 font-bold">Languages:</strong>
+              <span class="ml-1 text-gray-700">TypeScript, JavaScript, SQL</span>
+            </li>
+            <li>
+              <strong class="text-gray-950 font-bold">Backend &amp; Data:</strong>
+              <span class="ml-1 text-gray-700">Node.js, NestJS, Express, REST APIs, PostgreSQL, relational databases</span>
+            </li>
+            <li>
+              <strong class="text-gray-950 font-bold">Frontend &amp; Mobile:</strong>
+              <span class="ml-1 text-gray-700">React Native, Expo, Expo Router, Redux Toolkit, NativeWind</span>
+            </li>
+            <li>
+              <strong class="text-gray-950 font-bold">Other:</strong>
+              <span class="ml-1 text-gray-700">Third-party API integrations, payment workflows, authentication, debugging, deployment</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="mb-5">
+          <h2 class="text-xs font-extrabold uppercase tracking-wider text-gray-950 border-b border-gray-200 pb-1 mb-3">
+            PROFESSIONAL EXPERIENCE
+          </h2>
+
+          <!-- Role 1 -->
+          <div class="mb-4">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1.5">
+              <div class="text-xs sm:text-sm font-bold text-gray-950">
+                FlurryNetwork Technologies (FlurryPay)
+                <span class="font-medium text-gray-600">— Software Engineer / Full-Stack Engineer</span>
+              </div>
+              <div class="text-xs font-semibold text-gray-500 whitespace-nowrap">2024–Present</div>
+            </div>
+            <ul class="list-disc list-outside ml-4 sm:ml-5 text-xs sm:text-[13px] leading-relaxed text-gray-700 space-y-1">
+              <li>Develop and maintain application features, backend services and APIs supporting fintech operations.</li>
+              <li>Work with financial-service integrations and transaction-related workflows, including provider errors and operational constraints.</li>
+              <li>Investigate production issues across application, backend and third-party service layers; implement and support fixes.</li>
+              <li>Translate product and operational requirements into technical changes and support application releases.</li>
+            </ul>
+          </div>
+
+          <!-- Role 2 -->
+          <div class="mb-4">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1.5">
+              <div class="text-xs sm:text-sm font-bold text-gray-950">
+                Zeno NG
+                <span class="font-medium text-gray-600">— Frontend Developer</span>
+              </div>
+              <div class="text-xs font-semibold text-gray-500 whitespace-nowrap">2023–2024</div>
+            </div>
+            <ul class="list-disc list-outside ml-4 sm:ml-5 text-xs sm:text-[13px] leading-relaxed text-gray-700 space-y-1">
+              <li>Built and refined application interfaces and client-side functionality.</li>
+              <li>Integrated frontend components with backend APIs and collaborated on feature delivery.</li>
+            </ul>
+          </div>
+
+          <!-- Role 3 -->
+          <div class="mb-2">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1.5">
+              <div class="text-xs sm:text-sm font-bold text-gray-950">
+                SQI College of ICT
+                <span class="font-medium text-gray-600">— Software Engineering Instructor (Internship)</span>
+              </div>
+              <div class="text-xs font-semibold text-gray-500 whitespace-nowrap">2022–2023</div>
+            </div>
+            <ul class="list-disc list-outside ml-4 sm:ml-5 text-xs sm:text-[13px] leading-relaxed text-gray-700 space-y-1">
+              <li>Supported software engineering instruction and practical programming exercises.</li>
+              <li>Guided learners through development concepts and hands-on technical tasks.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Selected Products -->
+        <section class="mb-5">
+          <h2 class="text-xs font-extrabold uppercase tracking-wider text-gray-950 border-b border-gray-200 pb-1 mb-3">
+            SELECTED PRODUCTS
+          </h2>
+
+          <!-- Product 1 -->
+          <div class="mb-3.5">
+            <div class="text-xs sm:text-sm font-bold text-gray-950 mb-1">
+              Univa
+              <span class="font-medium text-gray-600">— Builder / Technical Lead</span>
+            </div>
+            <ul class="list-disc list-outside ml-4 sm:ml-5 text-xs sm:text-[13px] leading-relaxed text-gray-700 space-y-1">
+              <li>Building a student platform for course materials, notes, timetables, announcements and campus commerce.</li>
+              <li>Working across mobile development, backend integrations, deployment and product improvements.</li>
+            </ul>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="mb-2">
+            <div class="text-xs sm:text-sm font-bold text-gray-950 mb-1">
+              UnivaPay
+              <span class="font-medium text-gray-600">— Builder / Technical Lead</span>
+            </div>
+            <ul class="list-disc list-outside ml-4 sm:ml-5 text-xs sm:text-[13px] leading-relaxed text-gray-700 space-y-1">
+              <li>Building payment and dues-management workflows for student organisations and campus groups.</li>
+              <li>Working on payment-provider integrations, transaction flows and operational troubleshooting.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section>
+          <h2 class="text-xs font-extrabold uppercase tracking-wider text-gray-950 border-b border-gray-200 pb-1 mb-2">
+            EDUCATION
+          </h2>
+          <div class="flex items-baseline justify-between text-xs sm:text-[13px]">
+            <span class="font-bold text-gray-950">SQI College of ICT</span>
+            <span class="text-gray-600">Software Engineering Studies</span>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="no-print border-t border-white/10 py-8 text-center text-xs text-on-surface-variant">
+      <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>&copy; 2026 Olabisi Samuel. All rights reserved.</div>
+        <div class="flex items-center gap-4">
+          <a href="Olabisi_Samuel_Software_Engineer_CV (1).docx" download class="hover:text-primary transition-colors">Download DOCX</a>
+          <span class="text-white/20">&bull;</span>
+          <a href="Olabisi_Samuel_Software_Engineer_CV.pdf" download class="hover:text-primary transition-colors">Download PDF</a>
+          <span class="text-white/20">&bull;</span>
+          <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const toggleBtn = document.getElementById("toggleViewBtn");
+      const toggleText = document.getElementById("toggleViewText");
+      const pdfContainer = document.getElementById("pdfViewerContainer");
+      const paperSheet = document.getElementById("cvPaperSheet");
+
+      let showingPdf = false;
+      toggleBtn.addEventListener("click", () => {
+        showingPdf = !showingPdf;
+        if (showingPdf) {
+          pdfContainer.classList.remove("hidden");
+          paperSheet.classList.add("hidden");
+          toggleText.textContent = "View Paper Version";
+        } else {
+          pdfContainer.classList.add("hidden");
+          paperSheet.classList.remove("hidden");
+          toggleText.textContent = "View PDF Version";
+        }
+      });
+    </script>
+  </body>
+</html>

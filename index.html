@@ -317,8 +317,8 @@
       </div>
       <div class="hidden md:flex gap-8 items-center">
         <a
-          class="text-primary font-bold border-b border-primary hover:text-primary transition-colors duration-300"
-          href="#"
+          class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300"
+          href="#journey"
           >Journey</a
         >
         <a
@@ -338,17 +338,21 @@
         >
         <a
           class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300"
+          href="#cv"
+          >CV</a
+        >
+        <a
+          class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300"
           href="#"
           >Blog</a
         >
       </div>
       <a
-        href="assets/img/Olabisi Samuel Cooperate Resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold scale-95 active:scale-90 transition-transform shadow-[0_0_15px_rgba(79,140,255,0.4)]"
+        href="#cv"
+        class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold scale-95 active:scale-90 transition-transform shadow-[0_0_15px_rgba(79,140,255,0.4)] flex items-center gap-1.5"
       >
-        Resume
+        <span class="material-symbols-outlined text-sm">description</span>
+        <span>CV</span>
       </a>
     </nav>
     <!-- Hero Section -->
@@ -1261,6 +1265,316 @@ void main() {
         </div>
       </div>
     </section>
+    <!-- CV Section -->
+    <section class="py-section-gap relative overflow-hidden" id="cv">
+      <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10">
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 scroll-reveal">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              <span class="font-mono-label text-xs uppercase tracking-widest text-primary">Curriculum Vitae</span>
+            </div>
+            <h2 class="font-display-lg text-display-lg-mobile md:text-headline-md tracking-tighter text-on-surface">
+              Experience &amp; Credentials
+            </h2>
+            <p class="text-on-surface-variant font-body-md mt-2 max-w-xl">
+              Software engineer working across backend systems, fintech transactions, and full-stack delivery. View or download the official CV below.
+            </p>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="flex flex-wrap items-center gap-3">
+            <!-- Toggle View Tab -->
+            <button
+              id="cv-view-toggle-btn"
+              onclick="toggleCvView()"
+              class="px-4 py-2 rounded-full text-xs font-semibold border border-white/15 bg-white/5 hover:bg-white/10 text-on-surface transition-all flex items-center gap-1.5"
+            >
+              <span class="material-symbols-outlined text-sm" id="cv-toggle-icon">picture_as_pdf</span>
+              <span id="cv-toggle-label">Switch to PDF View</span>
+            </button>
+
+            <!-- Download Word Document -->
+            <a
+              href="Olabisi_Samuel_Software_Engineer_CV (1).docx"
+              download="Olabisi_Samuel_Software_Engineer_CV.docx"
+              class="px-4 py-2 rounded-full text-xs font-semibold border border-primary/30 bg-primary/10 hover:bg-primary/20 text-primary transition-all flex items-center gap-1.5"
+              title="Download Word Document from root directory"
+            >
+              <span class="material-symbols-outlined text-sm">description</span>
+              <span>Word (.docx)</span>
+            </a>
+
+            <!-- Download PDF Document -->
+            <a
+              href="Olabisi_Samuel_Software_Engineer_CV.pdf"
+              download="Olabisi_Samuel_Software_Engineer_CV.pdf"
+              class="px-5 py-2 rounded-full text-xs font-bold bg-primary text-on-primary hover:opacity-90 active:scale-95 transition-all shadow-[0_0_15px_rgba(79,140,255,0.4)] flex items-center gap-1.5"
+            >
+              <span class="material-symbols-outlined text-sm">download</span>
+              <span>Download PDF</span>
+            </a>
+
+            <!-- Open Dedicated CV Page -->
+            <a
+              href="cv.html"
+              target="_blank"
+              class="px-3 py-2 rounded-full text-xs font-semibold border border-white/15 hover:border-primary/50 text-on-surface-variant hover:text-primary transition-all flex items-center gap-1"
+              title="Open full dedicated CV viewer in new tab"
+            >
+              <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- View 1: Interactive Profile Card (Default) -->
+        <div id="cv-interactive-view" class="glass-card rounded-[32px] p-6 sm:p-10 md:p-12 relative overflow-hidden scroll-reveal">
+          <div class="absolute -top-24 -right-24 w-80 h-80 bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+          <!-- CV Header Inside Card -->
+          <div class="border-b border-white/10 pb-8 mb-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-on-surface">
+                  OLABISI SAMUEL
+                </h3>
+                <div class="text-primary font-mono-label text-sm sm:text-base font-semibold mt-1">
+                  SOFTWARE ENGINEER &nbsp;|&nbsp; BACKEND SYSTEMS &amp; FINTECH
+                </div>
+                <div class="text-on-surface-variant text-xs sm:text-sm mt-2 flex flex-wrap items-center gap-2">
+                  <span>United Kingdom</span>
+                  <span class="text-white/20">&bull;</span>
+                  <a href="tel:+447848166849" class="hover:text-primary transition-colors">+447848166849</a>
+                  <span class="text-white/20">&bull;</span>
+                  <a href="mailto:samsamlux2016@gmail.com" class="hover:text-primary transition-colors">samsamlux2016@gmail.com</a>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a
+                  href="https://www.linkedin.com/in/olanipekun-olabisi-6bbb54413/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 hover:border-primary/40 text-on-surface hover:text-primary transition-all"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/SamSamlux"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 hover:border-primary/40 text-on-surface hover:text-primary transition-all"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://uthmancoder-portfolio.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 hover:border-primary/40 text-on-surface hover:text-primary transition-all"
+                >
+                  Portfolio
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid: Summary & Skills -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
+            <!-- Professional Summary -->
+            <div class="lg:col-span-5 bg-surface-container-low/70 border border-white/5 rounded-2xl p-6">
+              <div class="font-mono-label text-xs uppercase text-primary font-bold tracking-wider mb-3 flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">badge</span>
+                <span>Professional Summary</span>
+              </div>
+              <p class="text-on-surface-variant text-sm leading-relaxed">
+                Software engineer working across fintech applications, backend APIs, third-party integrations and frontend development. Since 2024, contributing to FlurryPay’s financial-product workflows, production troubleshooting and application delivery. Also building Univa and UnivaPay, combining hands-on product development with experience supporting live systems and real users.
+              </p>
+            </div>
+
+            <!-- Technical Skills -->
+            <div class="lg:col-span-7 bg-surface-container-low/70 border border-white/5 rounded-2xl p-6">
+              <div class="font-mono-label text-xs uppercase text-primary font-bold tracking-wider mb-3 flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">code</span>
+                <span>Technical Skills</span>
+              </div>
+              <div class="space-y-3 text-xs sm:text-sm">
+                <div>
+                  <span class="text-on-surface font-semibold">Languages:</span>
+                  <div class="flex flex-wrap gap-1.5 mt-1.5">
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">TypeScript</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">JavaScript</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">SQL</span>
+                  </div>
+                </div>
+                <div>
+                  <span class="text-on-surface font-semibold">Backend &amp; Data:</span>
+                  <div class="flex flex-wrap gap-1.5 mt-1.5">
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">Node.js</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">NestJS</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">Express</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">REST APIs</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">PostgreSQL</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">Relational Databases</span>
+                  </div>
+                </div>
+                <div>
+                  <span class="text-on-surface font-semibold">Frontend &amp; Mobile:</span>
+                  <div class="flex flex-wrap gap-1.5 mt-1.5">
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">React Native</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">Expo</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">Expo Router</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">Redux Toolkit</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">NativeWind</span>
+                  </div>
+                </div>
+                <div>
+                  <span class="text-on-surface font-semibold">Other:</span>
+                  <div class="flex flex-wrap gap-1.5 mt-1.5">
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">Third-party API integrations</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">Payment workflows</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">Authentication</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">Debugging</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-on-surface-variant">Deployment</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Experience -->
+          <div class="mb-10">
+            <div class="font-mono-label text-xs uppercase text-primary font-bold tracking-wider mb-5 flex items-center gap-2 border-b border-white/10 pb-3">
+              <span class="material-symbols-outlined text-sm">work</span>
+              <span>Professional Experience</span>
+            </div>
+
+            <div class="space-y-6">
+              <!-- FlurryPay -->
+              <div class="border-l-2 border-primary/40 pl-5 relative">
+                <span class="w-3 h-3 rounded-full bg-primary absolute -left-[7px] top-1"></span>
+                <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+                  <h4 class="font-bold text-on-surface text-base sm:text-lg">
+                    FlurryNetwork Technologies (FlurryPay)
+                    <span class="text-primary font-normal text-sm">— Software Engineer / Full-Stack Engineer</span>
+                  </h4>
+                  <span class="text-xs font-mono text-on-surface-variant">2024–Present</span>
+                </div>
+                <ul class="space-y-1.5 text-xs sm:text-sm text-on-surface-variant list-disc list-outside ml-4">
+                  <li>Develop and maintain application features, backend services and APIs supporting fintech operations.</li>
+                  <li>Work with financial-service integrations and transaction-related workflows, including provider errors and operational constraints.</li>
+                  <li>Investigate production issues across application, backend and third-party service layers; implement and support fixes.</li>
+                  <li>Translate product and operational requirements into technical changes and support application releases.</li>
+                </ul>
+              </div>
+
+              <!-- Zeno NG -->
+              <div class="border-l-2 border-white/20 pl-5 relative">
+                <span class="w-3 h-3 rounded-full bg-white/40 absolute -left-[7px] top-1"></span>
+                <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+                  <h4 class="font-bold text-on-surface text-base sm:text-lg">
+                    Zeno NG
+                    <span class="text-on-surface-variant font-normal text-sm">— Frontend Developer</span>
+                  </h4>
+                  <span class="text-xs font-mono text-on-surface-variant">2023–2024</span>
+                </div>
+                <ul class="space-y-1.5 text-xs sm:text-sm text-on-surface-variant list-disc list-outside ml-4">
+                  <li>Built and refined application interfaces and client-side functionality.</li>
+                  <li>Integrated frontend components with backend APIs and collaborated on feature delivery.</li>
+                </ul>
+              </div>
+
+              <!-- SQI College of ICT -->
+              <div class="border-l-2 border-white/20 pl-5 relative">
+                <span class="w-3 h-3 rounded-full bg-white/40 absolute -left-[7px] top-1"></span>
+                <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+                  <h4 class="font-bold text-on-surface text-base sm:text-lg">
+                    SQI College of ICT
+                    <span class="text-on-surface-variant font-normal text-sm">— Software Engineering Instructor (Internship)</span>
+                  </h4>
+                  <span class="text-xs font-mono text-on-surface-variant">2022–2023</span>
+                </div>
+                <ul class="space-y-1.5 text-xs sm:text-sm text-on-surface-variant list-disc list-outside ml-4">
+                  <li>Supported software engineering instruction and practical programming exercises.</li>
+                  <li>Guided learners through development concepts and hands-on technical tasks.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Products & Education -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 border-t border-white/10">
+            <!-- Selected Products -->
+            <div>
+              <div class="font-mono-label text-xs uppercase text-primary font-bold tracking-wider mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">rocket_launch</span>
+                <span>Selected Products</span>
+              </div>
+              <div class="space-y-4">
+                <div class="bg-surface-container-low/50 border border-white/5 rounded-xl p-4">
+                  <div class="font-bold text-on-surface text-sm mb-1">
+                    Univa <span class="text-primary font-normal text-xs">— Builder / Technical Lead</span>
+                  </div>
+                  <p class="text-xs text-on-surface-variant leading-relaxed">
+                    Building a student platform for course materials, notes, timetables, announcements and campus commerce across mobile development, backend integrations, and deployment.
+                  </p>
+                </div>
+
+                <div class="bg-surface-container-low/50 border border-white/5 rounded-xl p-4">
+                  <div class="font-bold text-on-surface text-sm mb-1">
+                    UnivaPay <span class="text-primary font-normal text-xs">— Builder / Technical Lead</span>
+                  </div>
+                  <p class="text-xs text-on-surface-variant leading-relaxed">
+                    Building payment and dues-management workflows for student organisations and campus groups with payment-provider integrations, transaction flows and operational troubleshooting.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Education -->
+            <div>
+              <div class="font-mono-label text-xs uppercase text-primary font-bold tracking-wider mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">school</span>
+                <span>Education</span>
+              </div>
+              <div class="bg-surface-container-low/50 border border-white/5 rounded-xl p-5">
+                <div class="font-bold text-on-surface text-base">SQI College of ICT</div>
+                <div class="text-primary text-sm mt-1">Software Engineering Studies</div>
+                <div class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+                  Comprehensive core study in software engineering foundations, data structures, algorithms, and application architecture.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- View 2: Live Embedded PDF Viewer (Initially Hidden) -->
+        <div id="cv-pdf-view" class="hidden glass-card rounded-[32px] overflow-hidden border border-white/10 shadow-2xl">
+          <div class="px-6 py-4 bg-surface-container-high border-b border-white/10 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xs font-mono text-primary">
+              <span class="material-symbols-outlined text-sm">picture_as_pdf</span>
+              <span>Olabisi_Samuel_Software_Engineer_CV.pdf</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <a
+                href="Olabisi_Samuel_Software_Engineer_CV.pdf"
+                target="_blank"
+                class="text-xs text-on-surface-variant hover:text-primary flex items-center gap-1 transition-colors"
+              >
+                <span>Full tab</span>
+                <span class="material-symbols-outlined text-xs">open_in_new</span>
+              </a>
+            </div>
+          </div>
+          <iframe
+            src="Olabisi_Samuel_Software_Engineer_CV.pdf"
+            class="w-full h-[800px] border-0"
+            title="Olabisi Samuel Curriculum Vitae PDF"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="py-section-gap" id="contact">
       <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
@@ -1421,6 +1735,17 @@ void main() {
       <div class="flex flex-wrap gap-6 md:gap-10">
         <a
           class="text-on-surface-variant font-mono-label text-mono-label hover:text-primary hover:translate-y-[-2px] transition-all"
+          href="#cv"
+          >CV</a
+        >
+        <a
+          class="text-on-surface-variant font-mono-label text-mono-label hover:text-primary hover:translate-y-[-2px] transition-all"
+          href="Olabisi_Samuel_Software_Engineer_CV.pdf"
+          download
+          >Resume (PDF)</a
+        >
+        <a
+          class="text-on-surface-variant font-mono-label text-mono-label hover:text-primary hover:translate-y-[-2px] transition-all"
           href="https://www.davionhaven.com/"
           target="_blank"
           rel="noopener noreferrer"
@@ -1485,6 +1810,28 @@ void main() {
           btn.style.transform = "translate(0, 0) scale(1)";
         });
       });
+
+      // CV View Toggle (Interactive vs PDF view)
+      let cvShowingPdf = false;
+      function toggleCvView() {
+        cvShowingPdf = !cvShowingPdf;
+        const interactiveView = document.getElementById("cv-interactive-view");
+        const pdfView = document.getElementById("cv-pdf-view");
+        const toggleIcon = document.getElementById("cv-toggle-icon");
+        const toggleLabel = document.getElementById("cv-toggle-label");
+
+        if (cvShowingPdf) {
+          interactiveView.classList.add("hidden");
+          pdfView.classList.remove("hidden");
+          toggleIcon.textContent = "badge";
+          toggleLabel.textContent = "Switch to Profile View";
+        } else {
+          pdfView.classList.add("hidden");
+          interactiveView.classList.remove("hidden");
+          toggleIcon.textContent = "picture_as_pdf";
+          toggleLabel.textContent = "Switch to PDF View";
+        }
+      }
     </script>
   </body>
 </html>
